@@ -1,13 +1,12 @@
 package com.infullmobile.testworkshop.ex4
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import butterknife.bindView
-
 import com.infullmobile.testworkshop.R
-import com.infullmobile.testworkshop.ex1.PolishCurrencyFormatter
-import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +21,12 @@ class MainActivity : AppCompatActivity() {
         MagicService.fetchPrice().subscribe { price ->
             priceView.text = price
         }
+    }
+
+    companion object {
+        fun getIntent(context: Context, value: Int): Intent {
+            return Intent(context, MainActivity::class.java).putExtra(DATA, value)
+        }
+        const val DATA = "data"
     }
 }

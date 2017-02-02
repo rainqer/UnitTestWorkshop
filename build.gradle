@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+    kotlin_version = '1.0.5'
+    playServicesVersion = "10.0.0"
+    rxbinding_version = '0.4.0'
+    support_version = '24.2.1'
+    androidAnnotations = "com.android.support:support-annotations:$support_version"
+    androidAppcompat = "com.android.support:appcompat-v7:$support_version"
+    androidSupport = "com.android.support:support-v4:$support_version"
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    playServicesMaps = "com.google.android.gms:play-services-maps:$playServicesVersion"
+    rxAndroid = 'io.reactivex:rxandroid:1.2.1'
+    rxJava = "io.reactivex:rxjava:1.2.0"
+
+    assertJ = 'com.squareup.assertj:assertj-android:1.1.1'
+    junit = 'junit:junit:4.12'
+    mockito = 'org.mockito:mockito-all:2.0.2-beta'
+    robolectric = 'org.robolectric:robolectric:3.2.2'
+    robolectricShadows = 'org.robolectric:shadows-support-v4:3.2.2'
+}

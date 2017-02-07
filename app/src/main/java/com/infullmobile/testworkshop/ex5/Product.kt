@@ -9,7 +9,7 @@ data class Product(
         val discountTonsPrice: BigDecimal,
         val retailerPrice: BigDecimal) {
 
-    val productOnlinePrice: BigDecimal
+    val onlinePrice: BigDecimal
         get() = if (discountTonsPrice > BigDecimal.ZERO) discountTonsPrice else originalTonsPrice
 
 }
